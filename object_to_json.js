@@ -64,6 +64,9 @@ c = {greetings: 'howdy'};
 console.log(c);//outputs howdy ->creates new location in memory
 console.log(d);//outputs hola ->points to old location in memory
 
+//Note: all primitive types are pass by value; and all objects by reference.
+
+
 
 
 
