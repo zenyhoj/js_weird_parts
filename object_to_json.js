@@ -60,6 +60,11 @@ changedGreeting(d);
 console.log(d);
 console.log(c);
 
+c = {greetings: 'howdy'};
+console.log(c);//outputs howdy ->creates new location in memory
+console.log(d);//outputs hola ->points to old location in memory
+
+
 
 
 
