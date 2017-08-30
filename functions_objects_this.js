@@ -82,10 +82,13 @@ var c = {
             
         }
         setName('Updated again');
+        self.name = "joe";//name property could also be mutated anywhere within the object scope using self.
+        console.log(self);
      
     }
 }
 c.log(); //invokes the log method inside c object
+
 
 /*function b(){
     console.log(this);//this here still points to the global object/the Window Object
