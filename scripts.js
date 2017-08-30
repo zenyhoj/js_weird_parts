@@ -1,15 +1,17 @@
-var arr = [
-    1,
-    false,
-    {
-        name: 'joe'
-    },
-    function(name){
-        console.log('Hello ' + name);
-    },
-    "string"
-];
-console.log(arr);
-//invoking a function within an array an passing the name property to a function as a parameter
-arr[3](arr[2].name);
+function greet (firstname, lastname, language){//sets up default value if arguments in the function is empty
+   
+    if(arguments.length === 0){ //arguments are create after invoking a function
+        console.log('Missing parameter');
+        console.log("------------------------")
+        return;
+        //return; //breaks out of an if statment and continue to execute code
+    }
+    console.log(firstname);
+    console.log(lastname);
+    console.log(language);
+    console.log('arg 0: ' + arguments[0]);//used to access function arguments
+    console.log("------------------------")
+}
 
+greet();
+greet("Joe", "Balingit", "en");
