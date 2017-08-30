@@ -43,8 +43,7 @@ console.log(b);
 a = 3;
 console.log(a);*/
 
-//by Reference
-
+/*/by Reference
 var c = { greetings: "hi" };
 var d;
 d = c;
@@ -57,16 +56,44 @@ function changedGreeting (obj){ //l
     obj.greetings = "hola";
 }
 changedGreeting(d);
-console.log(d);
-console.log(c);
-
-c = {greetings: 'howdy'};
+console.log(d);//greetings location is passed in as object and overrieds existing value; 
+console.log(c);//same as d
+*/
+/*c = {greetings: 'howdy'};
 console.log(c);//outputs howdy ->creates new location in memory
-console.log(d);//outputs hola ->points to old location in memory
+console.log(d);//outputs hola ->points to old location in memory*/
+/*Note: all primitive types are pass by value; and all objects by reference.*/
 
-//Note: all primitive types are pass by value; and all objects by reference.
+//FUNCTIONS, OBJECTS AND THIS
+// console.log(this);//point to global/window object
 
+var c = {
+    name: 'name value',
+    log: function(){
+        var self = this;
+        //this here point to object c and is available within object properties and methods
+        self.name = 'new name value'; //mutated name property
+        console.log(self);
 
+        //function inside of a method of an object
+        var setName = function(newName){
+            self.name = newName; 
+            console.log(self);
+            
+        }
+        setName('Updated again');
+     
+    }
+}
+c.log(); //invokes the log method inside c object
+
+/*function b(){
+    console.log(this);//this here still points to the global object/the Window Object
+    this.newProp = "some value";
+    this.name = "outside object value"
+    console.log(this.newProp);
+}
+b();*/
 
 
 
