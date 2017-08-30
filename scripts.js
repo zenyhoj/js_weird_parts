@@ -17,3 +17,11 @@ var arrayOne = ['brown', 'fox'];
 var arrayTwo = ['the', 'quick', ...arrayOne];//...spread operator, used to insert a value of an array to another array element
 console.log(arrayTwo);
 
+//adding numbers using spread operator
+function addNumbers(one, two, three){
+    console.log(one+two+three);
+}
+var numbers = [1,2,31];
+addNumbers(...numbers);
+
+
