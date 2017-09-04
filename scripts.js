@@ -1,25 +1,16 @@
-var greetFunc = function(name){
-    return {name: 'Property'}
-    
-}();//immediately calls the function and stores the value to a variable.
-console.log(greetFunc);//outputs the variable and return and object.
+function greet(whattosay){
+    return function(name){
+          console.log(whattosay + ' ' + name);
+    }
+}
+
+// greet('hello')('joe'); //invokes a function and returns another function by invoking it
+var sayHi = greet('Hi'); //1. calls the greet function and passing a 'hi' value to whattosay parameter
+                        //after performing the code, it pops out of stack but whattosay will remain in the memory space 
+                           
+sayHi('Joe'); //2. this calls the inside anonymous function and passing 'Joe' as a value for name parameter
+                //then in console.log, the value of whattosay is still be accessible because it was
+                //stored in the memory space, so will output 'Hi Joe';
 
 
-(function(firstname){ //also an IIFE. This becomes a function expression by wrapping function with ()
-    var greeting = "hello ";
-    console.log(greeting + firstname);
-}('joe'));
 
-console.log(greeting);//refers to global execution context. outside of the function expression. could be referring to other script
-
-//It's also possible to override global value/object within a function
-(function(global, firstname){ //also an IIFE. This becomes a function expression by wrapping function with ()
-    var greeting = "hello ";
-    global.greeting = "hello "
-    console.log(greeting + firstname);
-    console.log(global.greeting + firstname);
-}(window, 'joe'));
-
-console.log(greeting);//refers to global execution context. outside of the function expression. could be referring to other script
-//value of greeting which is supposed to be hola will be changed to hello -> 
-//
