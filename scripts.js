@@ -1,17 +1,7 @@
-function greet (firstname, lastname, language){//sets up default value if arguments in the function is empty
-   
-    if(arguments.length === 0){ //arguments are create after invoking a function
-        console.log('Missing parameter');
-        console.log("------------------------")
-        return;
-        //return; //breaks out of an if statment and continue to execute code
-    }
-    console.log(firstname);
-    console.log(lastname);
-    console.log(language);
-    console.log('arg 0: ' + arguments[0]);//used to access function arguments
-    console.log("------------------------")
-}
+var greetFunc = function(name){
+    return {name: 'Property'}
+    
+}();//immediately calls the function and stores the value to a variable.
+console.log(greetFunc);//outputs the variable and return and object.
 
-greet();
-greet("Joe", "Balingit", "en");
+
