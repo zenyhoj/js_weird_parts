@@ -1,3 +1,7 @@
+/*What is a closure?
+A closure is an inner function that has access to the outer (enclosing) function’s variables—scope chain. The closure has three scope chains: it has access to its own scope (variables defined between its curly brackets), it has access to the outer function’s variables, and it has access to the global variables.
+The inner function has access not only to the outer function’s variables, but also to the outer function’s parameters. Note that the inner function cannot call the outer function’s arguments object, however, even though it can call the outer function’s parameters directly.*/
+
 function buildFunctions(){
     var arr = [];
 
@@ -10,7 +14,7 @@ function buildFunctions(){
     }
 
     return arr; //return the value of i which is 3 at the time of execution
-    console.log(/*----------------------------*/);
+
     
 }
 
@@ -46,6 +50,41 @@ var fs2 = buildFunc2();
 fs2[0]();
 fs2[1]();
 fs2[2]();
+
+//end of buildFunc example
+
+function adder(x){
+    return function(y){
+        return x + y;
+    }
+
+}
+
+var add5 = adder(5)
+var add15 = adder(15)
+console.log(add5(5));
+console.log(add15(5));
+//end of adder example
+
+function greeting(greet){
+    var greetName = function(name){
+        console.log(greet + ' ' + name);
+    }
+    return greetName;
+
+}
+
+var sayHi = greeting('Hi');
+sayHi('Joe'); //invokes the anonymous fuction and passed a value into name
+sayHi('Eddie');
+sayHi('Edmar');
+
+//a closure is a feature in javascript that a variable within a function or a global variable is accessible through an inner function
+
+
+// var greetJoe = greeting('Hi');
+// greetJoe('Joe');
+
 
 
 
