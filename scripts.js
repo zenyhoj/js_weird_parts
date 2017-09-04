@@ -1,16 +1,52 @@
-function greet(whattosay){
-    return function(name){
-          console.log(whattosay + ' ' + name);
+function buildFunctions(){
+    var arr = [];
+
+    for(var i = 0; i<3; i++){ //pushed a value into an array
+        arr.push(function () {
+            console.log(i) //at the time of loop expiration, 3 is the last value and it is stored in memory as a value of i
+            
+            
+        });
     }
+
+    return arr; //return the value of i which is 3 at the time of execution
+    console.log(/*----------------------------*/);
+    
 }
 
-// greet('hello')('joe'); //invokes a function and returns another function by invoking it
-var sayHi = greet('Hi'); //1. calls the greet function and passing a 'hi' value to whattosay parameter
-                        //after performing the code, it pops out of stack but whattosay will remain in the memory space 
-                           
-sayHi('Joe'); //2. this calls the inside anonymous function and passing 'Joe' as a value for name parameter
-                //then in console.log, the value of whattosay is still be accessible because it was
-                //stored in the memory space, so will output 'Hi Joe';
+var fs = buildFunctions(); //this does not output the console.log(i);
+console.log(fs); //returns an array of functions
+fs[0](); //first index in a buildFunction array
+         //(); invokes the anonymous function and outputs the stored value which is 3
+
+fs[1](); //second index in a buildFunction array
+         //(); invokes the anonymous function and still outputs the stored value which is 3
+
+fs[2](); //second index in a buildFunction array
+         //(); invokes the anonymous function and still outputs the stored value which is 3*/
+
+
+function buildFunc2(){
+
+    var arr2 = [];
+
+    for(var i=0; i<3; i++){
+        arr2.push(
+            (function(j){
+                return function(){
+                    console.log(j);
+                }
+            }(i))
+        )
+    }
+    return arr2;
+
+}
+var fs2 = buildFunc2();
+fs2[0]();
+fs2[1]();
+fs2[2]();
+
 
 
 
