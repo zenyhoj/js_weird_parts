@@ -60,9 +60,9 @@ function adder(x){
 
 }
 
-var add5 = adder(5)
+var add5 = adder(5)//PASSED INTO adder function
+console.log(add5(5));//INVOKES AN ANONYMOUS FUNCTION AND PASSED IN 5 as a value for y and outputs 15
 var add15 = adder(15)
-console.log(add5(5));
 console.log(add15(5));
 //end of adder example
 
@@ -84,6 +84,24 @@ sayHi('Edmar');
 
 // var greetJoe = greeting('Hi');
 // greetJoe('Joe');
+
+
+function someFunc(hello){
+ var greetings = ' there '    
+ return function sayName(name){
+        console.log (hello + greetings + name);
+    }   
+ 
+
+}
+var sayHi = someFunc('Hello');
+sayHi('Joe');
+
+
+
+
+
+
 
 
 
