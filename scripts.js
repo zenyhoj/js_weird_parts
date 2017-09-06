@@ -32,7 +32,7 @@ fs[2](); //second index in a buildFunction array
 
 function buildFunc2(){
 
-    var arr2 = [];
+    var arr2 = [];//instantiates an array 
 
     for(var i=0; i<3; i++){
         arr2.push(
