@@ -1,22 +1,28 @@
-//function factories
+//function that returns a function and delays the output using the setTimeout method.
 
-function makeGreeting(language){
+/*function sayLater(name){
+    var greeting = 'hi';
 
-    return function(firstname, lastname){
 
-        if(language === 'en'){
-            console.log('hello '+ firstname + ' ' + lastname);
-        }
+     setTimeout(function () {
+         console.log(greeting + name);
 
-        if (language === 'es') {
-            console.log('hola ' + firstname + ' ' + lastname);
-        }
-    }
+     }, 3000);
+    
+
 }
 
-var greetEnglish = makeGreeting('en');//pass en into makeGreeting function argument
-greetEnglish('John', 'Doe');//becomes a function that returns an anonymous function that accepts two arguments: firstname, lastname. en will be stored in memory and will be use for the first execution context.
+var sayName = sayLater('joe');*/
 
-var greetSpanish = makeGreeting('es');//pass es into makeGreeting function argument
-greetSpanish('John', 'Doe');//becomes a function that returns an anonymous function that accepts two arguments: firstname, lastname. en will be stored in memory and will be use for the another execution context.
+//callback
 
+function callMe(callback){
+    var initial = 'Im waiting';
+    console.log(initial);
+
+    callback();//calls the anonymous function as a parameter of callMe
+}
+
+callMe(function(){
+    console.log('Im done');
+});
