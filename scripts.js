@@ -14,8 +14,9 @@ function makeGreeting(language){
     }
 }
 
-var greetEnglish = makeGreeting('en');
-greetEnglish('John', 'Doe');
-var greetSpanish = makeGreeting('es');
-greetSpanish('John', 'Doe');
+var greetEnglish = makeGreeting('en');//pass en into makeGreeting function argument
+greetEnglish('John', 'Doe');//becomes a function that returns an anonymous function that accepts two arguments: firstname, lastname. en will be stored in memory and will be use for the first execution context.
+
+var greetSpanish = makeGreeting('es');//pass es into makeGreeting function argument
+greetSpanish('John', 'Doe');//becomes a function that returns an anonymous function that accepts two arguments: firstname, lastname. en will be stored in memory and will be use for the another execution context.
 
