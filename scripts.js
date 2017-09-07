@@ -8,14 +8,14 @@ function buildFunctions(){
     for(var i = 0; i<3; i++){ //pushed a value into an array
         arr.push(function () {
             console.log(i) //at the time of loop expiration, 3 is the last value and it is stored in memory as a value of i
-            
-            
+
+
         });
     }
 
     return arr; //return the value of i which is 3 at the time of execution
 
-    
+
 }
 
 var fs = buildFunctions(); //this does not output the console.log(i);
@@ -32,7 +32,7 @@ fs[2](); //second index in a buildFunction array
 
 function buildFunc2(){
 
-    var arr2 = [];//instantiates an array 
+    var arr2 = [];//instantiates an array
 
     for(var i=0; i<3; i++){
         arr2.push(
@@ -67,8 +67,10 @@ console.log(add15(5));
 //end of adder example
 
 function greeting(greet){
+    
     var greetName = function(name){
         console.log(greet + ' ' + name);
+        
     }
     return greetName;
 
@@ -86,24 +88,12 @@ sayHi('Edmar');
 // greetJoe('Joe');
 
 
-function someFunc(hello){
- var greetings = ' there '    
+/*function someFunc(hello){
+ var greetings = ' there ';
+
  return function sayName(name){
         console.log (hello + greetings + name);
-    }   
- 
-
+    }
 }
 var sayHi = someFunc('Hello');
-sayHi('Joe');
-
-
-
-
-
-
-
-
-
-
-
+sayHi('Joe');*/
