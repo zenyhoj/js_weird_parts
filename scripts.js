@@ -13,11 +13,12 @@ function getColumns(nCol) {
     var total = 0;
     for (var x in myArr) {
         total += myArr[x];
-        console.log(total);
+       
+        console.log(JSON.stringify(x + ": " + total));
     }
 
 
 
 }
 
-getColumns(10);//function to accept no. of grids
+getColumns(12);//function to accept no. of grids
