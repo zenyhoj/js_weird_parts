@@ -18,7 +18,6 @@ function getColumns(nCol) {
     }
 
 
-
 }
 
 getColumns(12);//function to accept no. of grids
