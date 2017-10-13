@@ -1,1 +1,0 @@
-window.libName = window.libName || "lib 2";
